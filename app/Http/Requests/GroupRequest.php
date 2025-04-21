@@ -24,7 +24,7 @@ class GroupRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:50',
+            'name' => 'required|string|min:3|max:50|regex:/^[A-Za-záéíóúñÑ\s-]+$/',
             'semester' => 'required',
             'shift' => 'required',
         ];
@@ -35,7 +35,9 @@ class GroupRequest extends FormRequest
         return [
             'name.required' => 'Se requiere el nombre del grupo.',
             'name.string' => 'El nombre del turno debe ser texto.',
+            'name.min' => 'El nombre del turno debe tener al menos 3 carácteres.',
             'name.max' => 'El nombre del turno no puede tener más de 50 carácteres.',
+            'name.regex' => 'El nombre del turno solo puede contener letras, espacios y guiones.',
             'semester.required' => 'Se requiere elegir un semestre.',
             'shift.required' => 'Se requiere elegir un turno.',
         ];

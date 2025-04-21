@@ -91,7 +91,7 @@
                 <div class="mb-3">
                     <label for="number">Número de semestre</label>
                     <input type="number" name="number" id="number" class="form-control" value="{{ old('number') }}"
-                        placeholder="Ejemplo: 1">
+                        placeholder="Ejemplo: 1" step="1">
                     @if ($errors->has('number'))
                         <p class="text-danger">{{ $errors->first('number') }}</p>
                     @endif

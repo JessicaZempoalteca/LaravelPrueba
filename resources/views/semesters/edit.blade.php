@@ -76,7 +76,7 @@
 
     <section>
         <div class="container mt-5">
-            <h1>Editar turno</h1>
+            <h1>Editar semestre</h1>
             <form action="{{ route('semesters.update', $semester->id) }}" method="POST">
                 @csrf
                 @method('PUT')
